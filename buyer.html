@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Dashboard - Craft Market</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Craft Market</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="buyer.html" class="active">Buy</a>
+              <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Welcome Buyer!</h2>
+        <p>Explore and purchase handmade crafts created by students.</p>
+    </div>
+
+    <!-- ▼▼ SEARCH BAR ▼▼ -->
+    <div class="container">
+        <input type="text" id="searchBar" placeholder="Search for crafts..." onkeyup="searchCrafts()">
+    </div>
+
+    <!-- ▼▼ BUYER PRODUCT LIST ▼▼ -->
+    <div class="container">
+        <h2>Available Crafts</h2>
+
+        <div class="product-list" id="products">
+
+            <div class="product-card">
+                <img src="Images/beaded bracelet.jpg" alt=" beaded Bracelets">
+                <h3>Beaded Bracelet</h3>
+                <p>Beautiful multi-color beads crafted by students.</p>
+                <span class="price">₹150</span>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="Images/bracelete.jpg" alt=" bracelets">
+                <h3>bracelets</h3>
+                <p>beautiful multi colored beads bracelets.</p>
+                <span class="price">₹250</span>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="Images/earings.jpg" alt="earings">
+                <h3>earings</h3>
+                <p>beautiful Handmade earing.</p>
+                <span class="price">₹180</span>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="Images/jhumka.jpg" alt="earings">
+                <h3>earings</h3>
+                <p>handmade earing to enhance your beauty.</p>
+                <span class="price">₹320</span>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+             <div class="product-card">
+                <img src="Images/name art.jpg" alt="name art for dedication">
+                <h3>name art for dedication</h3>
+                <p>decorative name art used as door plate.</p>
+                <span class="price">₹220</span>
+                <button class="buy-btn">Buy Now</button>
+             </div>
+            
+             <div class="product-card">
+                <img src="Images/name plate wall.jpg" alt="name plate">
+                <h3>name plate</h3>
+                <p>cute name plate used  for home decor.</p>
+                <span class="price">₹120</span>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+             <div class="product-card">
+                <img src="Images/name plate.jpg" alt="name plate">
+                <h3>name plate</h3>
+                <p>cute name plate used  for home decor.</p>
+                <span class="price">₹120</span>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+             <div class="product-card">
+                <img src="Images/photoframe.jpg" alt="photoframe">
+                <h3>photoframe</h3>
+                <p>beautiful photoframe used for wall decoration.</p>
+                <span class="price">₹120</span>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="Images/wooden flower.jpg" alt="wooden flower">
+                <h3>wooden flower</h3>
+                <p>beautiful handmade wooden flower for decoration.</p>
+                <span class="price">400</span>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ▼▼ BUYER INFO SECTION ▼▼ -->
+    <div class="container1 about-section">
+        <h2>How Buying Works</h2>
+        <p>
+            Craft Market allows students to showcase their talent and you can support them by buying 
+            their handmade products. Each purchase directly helps a student creator.
+        </p>
+
+        <ul>
+            <li>Browse through unique student-made crafts</li>
+            <li>Click “Buy Now” to contact the seller</li>
+            <li>Finalize payment & delivery method directly with seller</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>© 2025 Craft Market | Handmade by Students</p>
+        <p>Contact: support@craftmarket.com</p>
+    </footer>
+
+    <script>
+        // SEARCH FUNCTION
+        function searchCrafts() {
+            let input = document.getElementById("searchBar").value.toLowerCase();
+            let cards = document.getElementsByClassName("product-card");
+
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+                if (title.includes(input)) {
+                    cards[i].style.display = "block";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+
+        // BUY NOW BUTTON ALERT
+        const btns = document.querySelectorAll(".buy-btn");
+        btns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                alert("Seller will be contacted soon! (Feature coming soon)");
+            });
+        });
+    </script>
+
+</body>
+</html>

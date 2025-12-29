@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft Market - Profile</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body onload="checkLogin()">
+
+    <header>
+        <h1>Craft Market</h1>
+        <nav>
+             <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="buyer.html">Buy</a>
+             <a href="profile.html" class="active">Profile</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+
+    <section class="profile-container">
+        <h2 id="welcome">Welcome!</h2>
+
+        <!-- Add Craft Form -->
+        <div class="form-section">
+            <h3>Add a New Craft</h3>
+           <form onsubmit="addCraft(event)" enctype="multipart/form-data">
+
+                <label>Craft Name:</label>
+                <input type="text" id="craftName" name="craftname" placeholder="Enter craft name">
+
+                <label>Description:</label>
+                <textarea id="craftDescription" name="description" placeholder="Enter craft description"></textarea>
+
+                <label>Price:</label>
+                <input type="number" id="craftPrice" name="price" placeholder="Enter price">
+                <label>Image:</label>
+                <input type="file" id="craftImage" name="image" accept="image/*">
+
+
+                <button type="submit">Add Craft</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <!-- Display Crafts -->
+        <h3>Your Crafts</h3>
+        <div id="craftList" class="craft-list"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
